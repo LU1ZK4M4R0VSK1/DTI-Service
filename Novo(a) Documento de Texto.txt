@@ -1,0 +1,21 @@
+Copy-Item : Não é possível localizar o caminho 'C:\windows\system32\ShortcutManager.PowerUserSourcePath\PowerUser' porque ele não existe.
+No \\wasp\Instaladores\DTI Service\Programas\MeridianPowerShell\main\ShortcutManager.ps1:29 caractere:9
++         Copy-Item -Path "$this.PowerUserSourcePath\PowerUser" -Destin ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\windows\syst...ePath\PowerUser:String) [Copy-Item], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.CopyItemCommand
+
+Copy-Item : Não é possível localizar o caminho 'C:\windows\system32\ShortcutManager.PowerUserSourcePath\PowerUserU' porque ele não existe.
+No \\wasp\Instaladores\DTI Service\Programas\MeridianPowerShell\main\ShortcutManager.ps1:30 caractere:9
++         Copy-Item -Path "$this.PowerUserSourcePath\PowerUserU" -Desti ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\windows\syst...Path\PowerUserU:String) [Copy-Item], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.CopyItemCommand
+
+Arquivos copiados com sucesso!
+Não é possível salvar o atalho "C:\windows\system32\ShortcutManager.PublicDesktopPath\Meridian PowerUser (64-bit).lnk".
+No \\wasp\Instaladores\DTI Service\Programas\MeridianPowerShell\main\ShortcutManager.ps1:41 caractere:9
++         $shortcut2.Save()
++         ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (:) [], DirectoryNotFoundException
+    + FullyQualifiedErrorId : System.IO.DirectoryNotFoundException
