@@ -1,0 +1,17 @@
+# Argumentos para a instalação
+$argumentos = @(
+    "/i", "`"$msiPath`"",  # Instala o arquivo MSI
+    "LWSFOLDER=`"C:\BC-WorkSpace\`"",  # Define a pasta de trabalho
+    "EDMSERVERNAME=`"PEARLJAM`"",  # Nome do servidor
+    "INSTALLDIR=`"C:\Program Files\BC-Meridian`"",  # Diretório de instalação
+    "WEBACCESSURL=`"http://pearljam/Meridian/Start`"",  # URL de acesso web
+    "SCURL=`"http://PEARLJAM/bcsitecache`"",  # URL de cache
+    "ADDLOCAL=`"Common,AMHook,Download,Viewer,DBX,PUC,AIMS,PublisherExt,Acad2017,Acad2018,Acad2019,Acad2020,Acad2021,Inventor,NETInterops,NETAPI,WordAddin,ExcelAddin,PowerPointAddin,OutlookAddin`"",  # Componentes a serem instalados
+    "TRANSFORMS=`"1046.mst`"",  # Transformação
+    "/quiet",  # Instalação silenciosa
+    "/norestart",  # Não reinicia o sistema após a instalação
+    "/log", "`"C:\Temp\Meridian2021ClientSetup\Meridian2021-Setup.log`""  # Log de instalação
+)
+
+# Executa o comando msiexec com os argumentos
+Start-Process -FilePath "msiexec.exe" -ArgumentList $argumentos -NoNewWindow -Wait

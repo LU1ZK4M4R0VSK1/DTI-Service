@@ -1,0 +1,2 @@
+# Comando para instalar o BCME 2021 AutoVue de forma silenciosa usando msiexec
+Start-Process -FilePath "msiexec.exe" -ArgumentList "/i", "`"$setup`"", "/quiet", "/norestart", "/log", "C:\temp\install_log.txt" -NoNewWindow -Wait

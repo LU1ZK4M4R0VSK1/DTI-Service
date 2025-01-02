@@ -1,0 +1,2 @@
+# Copia o arquivo da shortcutOrigin para o shortcutDestiny e força a substituição, se necessário
+Copy-Item -Path $shortcutOrigin -Destination $shortcutDestiny -Force
