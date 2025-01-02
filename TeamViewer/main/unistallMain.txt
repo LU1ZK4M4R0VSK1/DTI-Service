@@ -1,0 +1,11 @@
+#Parar processo
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\TeamViewer\unistall\stopProcess.txt" | Out-String)
+
+#Usa o arquivo unistall (do TeamViewer novo)
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\TeamViewer\unistall\useUnistallFile.txt" | Out-String)
+
+#Excluir chaves do registro
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\TeamViewer\unistall\DeleteKeys.txt" | Out-String)
+
+#Excluir e Desinstalar TeamViewer existente
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\TeamViewer\unistall\unistall.txt" | Out-String)

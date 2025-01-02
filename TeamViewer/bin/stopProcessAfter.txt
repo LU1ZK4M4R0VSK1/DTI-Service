@@ -1,0 +1,7 @@
+# Obtém todos os processos que contenham "TeamViewer" no nome
+$processesAfter = Get-Process | Where-Object { $_.Name -like "*TeamViewer*" }
+
+# Verifica se existem processos e os encerra
+if ($processesAfter) {
+    $processesAfter | ForEach-Object { Stop-Process -Id $_.Id -Force }
+}

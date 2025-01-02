@@ -1,0 +1,2 @@
+# Executa a instalação silenciosa
+Start-Process -FilePath $installerPath -ArgumentList $silentArguments -NoNewWindow -Wait

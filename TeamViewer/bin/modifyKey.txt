@@ -1,0 +1,2 @@
+Set-ItemProperty -Path $regPath -Name $teamViewerPath -Value "RUNASINVOKER"
+Write-Host "Propriedades do arquivo alteradas para 'Não requerer administração'."

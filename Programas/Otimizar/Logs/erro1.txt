@@ -1,0 +1,20 @@
+Definindo plano de energia para alto desempenho...
+Plano de energia alterado para alto desempenho e suspensÃ£o definida para 45 minutos.
+Desabilitando efeitos grÃ¡ficos...
+Set-ItemProperty : Não é possível localizar o caminho 'HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\VisualEffects' porque ele não existe.
+No \\wasp\Instaladores\DTI Service\Programas\Otimizar\Modules\PCOptimization.ps1:12 caractere:9
++         Set-ItemProperty -Path $keyPath -Name "VisualFXSetting" -Valu ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (HKCU:\Software\...r\VisualEffects:String) [Set-ItemProperty], ItemNotFoundException
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SetItemPropertyCommand
+
+Efeitos grÃ¡ficos desabilitados.
+Limpando arquivos temporÃ¡rios...
+Arquivos temporÃ¡rios removidos.
+Configurando nÃºmero mÃ¡ximo de processadores para inicializaÃ§Ã£o...
+Exceção ao chamar "Put" com "0" argumento(s): "Falha genérica "
+No \\wasp\Instaladores\DTI Service\Programas\Otimizar\Modules\PCOptimization.ps1:27 caractere:9
++         $bootConfig.Put()
++         ~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : DotNetMethodException

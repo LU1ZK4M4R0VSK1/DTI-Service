@@ -1,0 +1,2 @@
+# Executa o TeamViewer como administrador em segundo plano
+Start-Process -FilePath $teamViewerPath -Verb RunAs

@@ -1,0 +1,17 @@
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
+
+#SERVIDOR
+$servidorItambe = "wasp"
+
+#DESINSTALACAO
+
+#Para o processo do smatclient
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\Adobe\unistall\unistall.txt" | Out-String)
+
+#INSTALACAO
+
+#Copia e cola o instalador no TEMP
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\Adobe\bin\copyAndPaste.txt" | Out-String)
+
+#Faz a instalação silenciosa do Adobe
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\Adobe\bin\install.txt" | Out-String)

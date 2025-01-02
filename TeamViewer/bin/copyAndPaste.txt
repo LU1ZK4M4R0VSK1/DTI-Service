@@ -1,0 +1,10 @@
+# Cria o diretório de destino se não existir
+New-Item -Path $tmp_tv -ItemType Directory -Force
+
+# Copia o conteúdo da pasta de origem para a pasta de destino
+Copy-Item -Path $server_tv\* -Destination $tmp_tv -Recurse -Force
+
+# Aguarda até que todos os arquivos sejam copiados
+while ((Get-ChildItem $tmp_tv -File).Count -lt (Get-ChildItem $server_tv -File).Count) {
+    Start-Sleep -Seconds 1
+}

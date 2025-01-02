@@ -1,0 +1,34 @@
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
+
+#SERVIDOR
+$servidorItambe = "wasp"
+
+#Chama as variaveis
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\TeamViewer\variables\vars.txt" | Out-String)
+
+#Chama o unistallMain para realizar a desintalacao completa
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\TeamViewer\main\unistallMain.txt" | Out-String)
+
+#Copiar e colar pasta tmp_TeamViewer
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\TeamViewer\bin\copyAndPaste.txt" | Out-String)
+
+#Processo de instalacao
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\TeamViewer\bin\installation.txt" | Out-String)
+
+Start-Sleep -Seconds 10
+
+#Para o processo do TeamViewer (se nao fizer isso ele nao atualiza com a imagem)
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\TeamViewer\bin\stopProcessAfter.txt" | Out-String)
+
+#Cria o registro para executar como admin
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\TeamViewer\bin\createKeyAdminFile.txt" | Out-String)
+
+Start-Sleep -Seconds 10
+
+#Inicia o TeamViewer
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\TeamViewer\bin\adminStart.txt" | Out-String)
+
+Start-Sleep -Seconds 2
+
+#Altera a Key que foi criada
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\TeamViewer\bin\modifyKey.txt" | Out-String)

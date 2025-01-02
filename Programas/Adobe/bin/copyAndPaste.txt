@@ -1,0 +1,17 @@
+# Definir o caminho de origem e destino
+$origem = "\\$servidorItambe\Instaladores\DTI Service\Programas\Adobe\files\Reader_br_install.exe"
+$installerPath = "C:\temp\Reader_br_install.exe"
+
+# Verifica se a pasta de destino existe; se não existir, cria a pasta
+if (-not (Test-Path "C:\temp")) {
+    New-Item -Path "C:\temp" -ItemType Directory
+}
+
+# Copiar o arquivo e substituir se já existir
+try {
+    Write-Host "Copiando arquivo para C:\temp..."
+    Copy-Item -Path $origem -Destination $installerPath -Force
+    Write-Host "Arquivo copiado com sucesso."
+} catch {
+    Write-Host "Erro ao copiar o arquivo: $_"
+}

@@ -1,0 +1,9 @@
+# Verifica se a chave existe e adiciona a entrada se não existir
+if (-not (Test-Path $regPath)) {
+    New-Item -Path $regPath -Force | Out-Null
+}
+
+# Adiciona ou atualiza a entrada no registro para executar como administrador
+Set-ItemProperty -Path $regPath -Name $teamViewerPath -Value "RUNASADMIN"
+
+Write-Host "Propriedades do arquivo alteradas para 'Executar como administrador'."
