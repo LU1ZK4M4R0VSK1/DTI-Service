@@ -1,0 +1,17 @@
+{
+    "Protheus": "\\\\wasp\\Instaladores\\DTI Service\\Programas\\Protheus\\Main.ps1",
+    "TeamViewer": "\\\\wasp\\Instaladores\\DTI Service\\Programas\\TeamViewer.new\\TeamViewerDeploy.ps1",
+    "SGEE": "\\\\wasp\\Instaladores\\DTI Service\\Programas\\SGEE\\Main.ps1",
+    "Adobe Reader": "\\\\wasp\\Instaladores\\DTI Service\\Programas\\Adobe\\Main.ps1",
+    "Meridian": "\\\\wasp\\Instaladores\\DTI Service\\Programas\\MeridianPowerShell\\main\\App.ps1",
+    "TrueView": "\\\\wasp\\Instaladores\\DTI Service\\Programas\\DwgTrueView2025\\ScriptTrueView2025.ps1",
+    "Otimizacao": "\\\\wasp\\Instaladores\\DTI Service\\Programas\\Otimizar\\Main\\App.ps1",
+    "Crystal parte 1": "\\\\wasp\\Instaladores\\DTI Service\\Programas\\Crystal\\ScriptCrystal_1 1.ps1",
+    "Crystal parte 2": "\\\\wasp\\Instaladores\\DTI Service\\Programas\\Crystal\\ScriptCrystal_2 1.ps1",
+    "Office 365": "\\\\wasp\\Instaladores\\DTI Service\\Programas\\Office 365\\Main.ps1",
+    "Sophos": "\\\\wasp\\Instaladores\\DTI Service\\Programas\\Sophos\\Main.ps1",
+    "Office Web": "\\\\wasp\\Instaladores\\DTI Service\\Programas\\Office Web\\Main.ps1",
+    "VPN": "\\\\wasp\\Instaladores\\DTI Service\\Programas\\VPN\\Main.ps1",
+    "teste": "\\\\wasp\\Instaladores\\DTI Service\\Programas\\Teste\\teste.ps1",
+	"Crystal parte 1 YES": "\\\\wasp\\Instaladores\\DTI Service\\Programas\\Crystal\\ScriptCrystal_1 yes.ps1"
+}

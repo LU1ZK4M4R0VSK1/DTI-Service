@@ -1,0 +1,13 @@
+# Verifica se o arquivo existe e exclui
+if (Test-Path $atalho1) {
+    Remove-Item $atalho1 -Force
+    Write-Host "Arquivo '$atalho1' excluído."
+} else {
+    Write-Host "Arquivo '$atalho1' não encontrado."
+}
+
+if (Test-Path $atalho2) {
+    Remove-Item $atalho2 -Force
+} else {
+    Write-Host "Arquivo '$atalho2' não encontrado."
+}

@@ -1,0 +1,30 @@
+. : O termo '.\Modules\PrinterManager.ps1' não é reconhecido como nome de cmdlet, função, arquivo de script ou
+programa operável. Verifique a grafia do nome ou, se um caminho tiver sido incluído, veja se o caminho está correto e
+tente novamente.
+No linha:1 caractere:3
++ . .\Modules\PrinterManager.ps1
++   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (.\Modules\PrinterManager.ps1:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Get-Content : Não é possível localizar o caminho 'C:\windows\system32\Config\printerConfig.json' porque ele não existe.
+No linha:4 caractere:11
++ $config = Get-Content -Raw -Path $configPath | ConvertFrom-Json
++           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (C:\windows\syst...nterConfig.json:String) [Get-Content], ItemNotFoundEx
+   ception
+    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand
+
+Não é possível localizar o tipo [PrinterManager].
+No linha:11 caractere:19
++ $printerManager = [PrinterManager]::new($printerIP, $printerName, $dr ...
++                   ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (PrinterManager:TypeName) [], RuntimeException
+    + FullyQualifiedErrorId : TypeNotFound
+
+Não é possível chamar um método em uma expressão de valor nulo.
+No linha:12 caractere:1
++ $printerManager.SetupPrinter()
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull

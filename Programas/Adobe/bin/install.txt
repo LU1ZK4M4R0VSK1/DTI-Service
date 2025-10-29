@@ -1,0 +1,2 @@
+    # Executar o instalador em modo silencioso
+    Start-Process -FilePath $installerPath -ArgumentList "/quiet /norestart /Q /S /silent"

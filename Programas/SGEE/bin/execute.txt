@@ -1,0 +1,4 @@
+$exePath = "C:\temp\SGEE_VBN_Instalacao\setup.exe"
+
+# Executa o arquivo .exe
+Start-Process -FilePath $exePath -Wait

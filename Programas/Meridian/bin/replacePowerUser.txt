@@ -1,0 +1,2 @@
+# Copia o arquivo da mps para o pathProgram e força a substituição se necessário
+Copy-Item -Path $mps -Destination $pathProgram -Force

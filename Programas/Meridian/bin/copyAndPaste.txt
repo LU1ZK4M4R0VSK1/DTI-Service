@@ -1,0 +1,7 @@
+# Verifica se o diretório de temp existe, se não, cria
+if (-not (Test-Path -Path $temp)) {
+    New-Item -ItemType Directory -Path $temp
+}
+
+# Copia o conteúdo da pasta meridianFolder para a pasta temp
+Copy-Item -Path $meridianFolder -Destination $temp -Recurse

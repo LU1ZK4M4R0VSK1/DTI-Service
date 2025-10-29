@@ -1,0 +1,1 @@
+Invoke-Expression -Command (Get-Content -Path "\\wasp\Instaladores\DTI Service\Programas\SGEE\main\Main.txt" | Out-String)

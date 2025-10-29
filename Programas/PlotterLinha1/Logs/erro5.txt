@@ -1,0 +1,9 @@
+Criando porta TCP/IP para o IP 10.15.50.1
+Instalando o driver HP DesingJet T250 24-in V4 a partir de \\wasp\Instaladores\DTI Service\Programas\PlotterLinha1\Resources\Driver PLOTTER LINHA 1
+O caminho para o driver nÃ£o Ã© vÃ¡lido: \\wasp\Instaladores\DTI Service\Programas\PlotterLinha1\Resources\Driver PLOTTER LINHA 1\HP DesingJet T250 24-in V4.inf
+Caminho do driver invÃ¡lido.
+No \\wasp\Instaladores\DTI Service\Programas\PlotterLinha1\Modules\PrinterManager.ps1:33 caractere:13
++             throw "Caminho do driver invÃ¡lido."
++             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Caminho do driver invÃ¡lido.:String) [], RuntimeException
+    + FullyQualifiedErrorId : Caminho do driver invÃ¡lido.

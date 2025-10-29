@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Filters>
+  <Filter dll="hpibeck.dll" clsid = "{aba64818-59f9-4b8b-b5dd-76f5a964970e}" name = "hpibeck">
+    <Input   guid  = "{4d47a67c-66cc-4430-850e-daf466fe5bc4}" comment="IID_IPrintReadStream" />
+    <Output  guid  = "{65bb7f1b-371e-4571-8ac7-912f510c1a38}" comment="IID_IPrintWriteStream" />
+  </Filter>
+  <Filter dll= "hpiprev.dll" clsid = "{71466c95-f6ac-4f67-835d-2f5f66e3ede4}" name = "hpiprev">
+    <Input   guid  = "{4d47a67c-66cc-4430-850e-daf466fe5bc4}" comment="IID_IPrintReadStream" />
+    <Output  guid  = "{65bb7f1b-371e-4571-8ac7-912f510c1a38}" comment="IID_IPrintWriteStream" />
+  </Filter>
+  <Filter dll="hpixps3.dll" clsid="{779bd73d-f392-4e7a-a7c5-d441ca0e3bc5}" name="xpstransform">
+    <Input 	guid="{b8cf8530-5562-47c4-ab67-b1f69ecf961e}" comment="IID_IXpsDocumentProvider" />
+    <Output guid="{4368d8a2-4181-4a9f-b295-3d9a38bb9ba0}" comment="IID_IXpsDocumentConsumer" />
+  </Filter>
+  <Filter dll="hpipcl3.dll" clsid="{CFF7BE69-E62D-403b-BE4F-48EC73F5DA1A}" name="xps2raster">
+    <Input	guid="{b8cf8530-5562-47c4-ab67-b1f69ecf961e}" comment="IID_IXpsDocumentProvider" />
+    <Output guid="{65bb7f1b-371e-4571-8ac7-912f510c1a38}" comment="IID_IPrintWriteStream" />
+  </Filter>
+  <Filter dll= "hpipsec.dll" clsid = "{C36D282A-0A2C-4555-A9BF-6C5B997D18E9}" name = "hpipsec">
+    <Input   guid  = "{4d47a67c-66cc-4430-850e-daf466fe5bc4}" comment="IID_IPrintReadStream" />
+    <Output  guid  = "{65bb7f1b-371e-4571-8ac7-912f510c1a38}" comment="IID_IPrintWriteStream" />
+  </Filter>
+  <OptionalFilterServiceProvider dll="XpsRasterService.dll" />
+</Filters>

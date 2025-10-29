@@ -1,0 +1,2 @@
+# Executa a instalação em segundo plano sem interação do usuário
+Start-Process -FilePath $javaInstall -ArgumentList $silentArgs -Wait

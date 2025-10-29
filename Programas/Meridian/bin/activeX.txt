@@ -1,0 +1,2 @@
+# Altera o tipo de inicialização do serviço para Automático
+Set-Service -Name $service -StartupType Automatic

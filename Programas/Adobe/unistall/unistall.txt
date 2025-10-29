@@ -1,0 +1,17 @@
+# Nome exato do programa que será desinstalado
+$programName = "Adobe Acrobat (64-bit)"
+
+# Encontrar o Adobe Acrobat (64-bit) instalado
+$adobeApp = Get-WmiObject -Query "SELECT * FROM Win32_Product WHERE Name = '$programName'"
+
+# Verificar se o programa foi encontrado
+if ($adobeApp) {
+    Write-Host "Iniciando a desinstalação silenciosa do $programName..."
+
+    # Executar a desinstalação silenciosa
+    $adobeApp.Uninstall() | Out-Null
+
+    Write-Host "$programName foi desinstalado com sucesso."
+} else {
+    Write-Host "$programName não encontrado no sistema."
+}

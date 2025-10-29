@@ -1,0 +1,942 @@
+*%******************************************************************************
+*%                              GPD Name and Version Section
+*%******************************************************************************
+*GPDFileName: "hpiT65024-in.gpd"
+*GPDFileVersion: "1.0"
+*GPDSpecVersion: "1.0"
+*ModelName: "HP DesignJet T650 24-in"
+*PrinterType: PAGE
+*MasterUnits: PAIR(1200,1200)
+*MaxCopies: 9999
+*Include: "hpinames.gpd"
+*Include: "STDNAMES.gpd"
+*Include: "MSXPSINC.gpd"
+*Include: "locale.gpd"
+*ResourceDLL: "hpires.dll"
+*PrintSchemaPrivateNamespaceURI: "http://schemas.hp.com/lfp/ptpc/2006/1"
+*Command: CmdSendBlockData { *Cmd : "" }
+
+*%******************************************************************************
+*%                              Collate
+*%******************************************************************************
+*Feature: Collate
+{
+   *PrintSchemaKeywordMap: "DocumentCollate"
+   *rcNameID: =IDS_COLLATE
+   *DefaultOption: OFF
+   *Option: OFF
+   {
+      *PrintSchemaKeywordMap: "Uncollated"
+      *rcNameID: =IDS_COLLATE_OFF
+   }
+
+   *Option: ON
+   {
+      *PrintSchemaKeywordMap: "Collated"
+      *rcNameID: =IDS_COLLATE_ON
+   }
+
+}
+
+*%******************************************************************************
+*%                              InputBin
+*%******************************************************************************
+*Feature: InputBin
+{
+   *PrintSchemaKeywordMap: "JobInputBin"
+   *rcNameID: =IDS_JOBINPUTBIN
+   *DefaultOption: FORMSOURCE
+   *Option: FORMSOURCE
+   {
+      *PrintSchemaKeywordMap: "AutoSelect"
+      *rcNameID: =IDS_JOBINPUTBIN_AUTOSELECT
+   }
+
+   *Option: Roll
+   {
+      *rcNameID: =IDS_JOBINPUTBIN_ROLL1
+   }
+
+   *Option: Manual
+   {
+      *PrintSchemaKeywordMap: "Manual"
+      *rcNameID: =IDS_JOBINPUTBIN_MANUAL
+   }
+
+   *Option: Tray
+   {
+      *rcNameID: =IDS_JOBINPUTBIN_AUTOSHEETFEEDER
+   }
+
+}
+
+*%******************************************************************************
+*%                              JobEconomode
+*%******************************************************************************
+*Feature: JobEconomode
+{
+   *rcNameID: =IDS_JOBECONOMODE
+   *DefaultOption: OFF
+   *Option: OFF
+   {
+      *rcNameID: =IDS_JOBECONOMODE_OFF
+   }
+
+   *Option: ON
+   {
+      *rcNameID: =IDS_JOBECONOMODE_ON
+   }
+
+}
+
+*%******************************************************************************
+*%                              JobEnableAutoCutter
+*%******************************************************************************
+*Feature: JobEnableAutoCutter
+{
+   *rcNameID: =IDS_ENABLEAUTOCUTTER
+   *DefaultOption: ON
+   *Option: OFF
+   {
+      *rcNameID: =IDS_ENABLEAUTOCUTTER_OFF
+   }
+
+   *Option: ON
+   {
+      *rcNameID: =IDS_ENABLEAUTOCUTTER_ON
+   }
+
+}
+
+*%******************************************************************************
+*%                              JobFastRenderingMode
+*%******************************************************************************
+*Feature: JobFastRenderingMode
+{
+   *rcNameID: =IDS_JOBFASTRENDERINGMODE
+   *DefaultOption: ON
+   *Option: OFF
+   {
+      *rcNameID: =IDS_ENABLEFASTRENDERINGMODE_OFF
+   }
+
+   *Option: ON
+   {
+      *rcNameID: =IDS_ENABLEFASTRENDERINGMODE_ON
+   }
+
+}
+
+*%******************************************************************************
+*%                              JobMarginsLayout
+*%******************************************************************************
+*Feature: JobMarginsLayout
+{
+   *rcNameID: =IDS_MARGINSLAYOUT
+   *DefaultOption: Standard
+   *Option: Standard
+   {
+      *rcNameID: =IDS_MARGINSLAYOUT_STANDARD
+   }
+
+   *Option: ClipContentsByMargins
+   {
+      *rcNameID: =IDS_MARGINSLAYOUT_CLIPCONTENTSBYMARGINS
+   }
+
+   *Option: Oversize
+   {
+      *rcNameID: =IDS_MARGINSLAYOUT_OVERSIZE
+   }
+
+}
+
+*%******************************************************************************
+*%                              JobMaxDetail
+*%******************************************************************************
+*Feature: JobMaxDetail
+{
+   *rcNameID: =IDS_JOBMAXDETAIL
+   *DefaultOption: OFF
+   *Option: OFF
+   {
+      *rcNameID: =IDS_JOBMAXDETAIL_OFF
+   }
+
+   *Option: ON
+   {
+      *rcNameID: =IDS_JOBMAXDETAIL_ON
+   }
+
+}
+
+*%******************************************************************************
+*%                              JobPageOrder
+*%******************************************************************************
+*Feature: JobPageOrder
+{
+   *rcNameID: =IDS_PAGEORDER
+   *DefaultOption: Standard
+   *Option: Standard
+   {
+      *rcNameID: =IDS_PAGEORDER_DIRECT
+   }
+
+   *Option: Reverse
+   {
+      *rcNameID: =IDS_PAGEORDER_REVERSE
+   }
+
+}
+
+*%******************************************************************************
+*%                              JobPrintPreview
+*%******************************************************************************
+*Feature: JobPrintPreview
+{
+   *rcNameID: =IDS_PRINTPREVIEW
+   *DefaultOption: ON
+   *Option: OFF
+   {
+      *rcNameID: =IDS_PRINTPREVIEW_OFF
+   }
+
+   *Option: ON
+   {
+      *rcNameID: =IDS_PRINTPREVIEW_ON
+   }
+
+}
+
+*%******************************************************************************
+*%                              JobPrintQualitySettings
+*%******************************************************************************
+*Feature: JobPrintQualitySettings
+{
+   *rcNameID: =IDS_PRINTQUALITYSETTINGS
+   *DefaultOption: Standard
+   *Option: Standard
+   {
+      *rcNameID: =IDS_PRINTQUALITYSETTINGS_STANDARD
+   }
+
+   *Option: Custom
+   {
+      *rcNameID: =IDS_PRINTQUALITYSETTINGS_CUSTOM
+   }
+
+}
+
+*%******************************************************************************
+*%                              JobRemoveBlankAreas
+*%******************************************************************************
+*Feature: JobRemoveBlankAreas
+{
+   *rcNameID: =IDS_JOBREMOVEBLANKAREAS
+   *DefaultOption: OFF
+   *Option: OFF
+   {
+      *rcNameID: =IDS_JOBREMOVEBLANKAREAS_OFF
+   }
+
+   *Option: ON
+   {
+      *rcNameID: =IDS_JOBREMOVEBLANKAREAS_ON
+   }
+
+}
+
+*%******************************************************************************
+*%                              JobRotate
+*%******************************************************************************
+*Feature: JobRotate
+{
+   *rcNameID: =IDS_ROTATE
+   *DefaultOption: None
+   *Option: None
+   {
+      *rcNameID: =IDS_ROTATE_OFF
+   }
+
+   *Option: Rotate0
+   {
+      *rcNameID: =IDS_ROTATE_0
+   }
+
+   *Option: Rotate90
+   {
+      *rcNameID: =IDS_ROTATE_90
+   }
+
+   *Option: Rotate180
+   {
+      *rcNameID: =IDS_ROTATE_180
+   }
+
+   *Option: Rotate270
+   {
+      *rcNameID: =IDS_ROTATE_270
+   }
+
+}
+
+*%******************************************************************************
+*%                              JobUserMargin
+*%******************************************************************************
+*Feature: JobUserMargin
+{
+   *rcNameID: =IDS_JOBUSERMARGIN
+   *DefaultOption: 5mm
+   *Option: 5mm
+   {
+      *rcNameID: =IDS_JOBUSERMARGIN_5MM
+   }
+
+}
+
+*%******************************************************************************
+*%                              MediaType
+*%******************************************************************************
+*Feature: MediaType
+{
+   *PrintSchemaKeywordMap: "PageMediaType"
+   *rcNameID: =IDS_PAGEMEDIATYPE
+   *DefaultOption: AutoSelect
+   *Option: AdhesivePaper
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_5120
+   }
+
+   *Option: AdhesivePolypropyleneGloss
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_5140
+   }
+
+   *Option: AutoSelect
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_AUTOSELECT
+   }
+
+   *Option: CoatedPaper
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_1100
+   }
+
+   *Option: HPUniversalCoatedPaper
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_1102
+   }
+
+   *Option: HPUniversalHeavyweightCoatedPaper
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_1112
+   }
+
+   *Option: GenericNaturalTracingPaper3C65gm2
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_3030
+   }
+
+   *Option: GenericNaturalTracingPaper3E65gm2
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_3040
+   }
+
+   *Option: HeavyweightCoatedpaper
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_1110
+   }
+
+   *Option: HPBrightWhiteInkjetPaper
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_1011
+   }
+
+   *Option: HPCoatedPaper
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_1101
+   }
+
+   *Option: HPHeavyweightCoatedpaper
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_1111
+   }
+
+   *Option: HPNaturalTracingPaper
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_3001
+   }
+
+   *Option: NTPRubberResistant
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_3041
+   }
+
+   *Option: HPUniversalBondPaper
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_1012
+   }
+
+   *Option: HPUniversalGlossPhotoPaper
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_2002
+   }
+
+   *Option: HPUniversalInstantdryGlossPhotoPaper
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_2003
+   }
+
+   *Option: HPUniversalInstantdrySatinPhotoPaper
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_2014
+   }
+
+   *Option: PlainPaperforGraphics
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_1009
+   }
+
+   *Option: HPUniversalSatinPhotoPaper
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_2013
+   }
+
+   *Option: MatteFilm
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_3110
+   }
+
+   *Option: PhotoGlossPaper
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_2000
+   }
+
+   *Option: PolypropyleneSatin
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_2035
+   }
+
+   *Option: PhotoSemiGlossSatinPaper
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_2010
+   }
+
+   *Option: Plainpaper
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_1000
+   }
+
+   *Option: TransparentClearFilm
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_3100
+   }
+
+   *Option: DigitalBlueprintPaper
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_1108
+   }
+
+   *Option: HPUniversalAdhesiveVynil
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_5131
+   }
+
+   *Option: HPEverydayAdhesiveGlossPolypropylene
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_5152
+   }
+
+   *Option: HPClearFilm
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_3101
+   }
+
+   *Option: HPMatteFilm
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_3111
+   }
+
+   *Option: ClearFilmKOD
+   {
+      *rcNameID: =IDS_PAGEMEDIATYPE_3102
+   }
+
+}
+
+*%******************************************************************************
+*%                              Orientation
+*%******************************************************************************
+*Feature: Orientation
+{
+   *PrintSchemaKeywordMap: "PageOrientation"
+   *rcNameID: =IDS_PAGEORIENTATION
+   *DefaultOption: PORTRAIT
+   *Option: PORTRAIT
+   {
+      *PrintSchemaKeywordMap: "Portrait"
+      *rcNameID: =IDS_PAGEORIENTATION_PORTRAIT
+   }
+
+   *Option: LANDSCAPE_CC270
+   {
+      *PrintSchemaKeywordMap: "Landscape"
+      *rcNameID: =IDS_PAGEORIENTATION_LANDSCAPE
+   }
+
+}
+
+*%******************************************************************************
+*%                              PageAutorotate
+*%******************************************************************************
+*Feature: PageAutorotate
+{
+   *rcNameID: =IDS_PAGEAUTOROTATE
+   *DefaultOption: Printer
+   *Option: Printer
+   {
+      *rcNameID: =IDS_PAGEAUTOROTATE_PRINTER
+   }
+
+   *Option: 17inches
+   {
+      *rcNameID: =IDS_PAGEAUTOROTATE_17INCHES
+   }
+
+   *Option: 18inches
+   {
+      *rcNameID: =IDS_PAGEAUTOROTATE_18INCHES
+   }
+
+   *Option: 24inches
+   {
+      *rcNameID: =IDS_PAGEAUTOROTATE_24INCHES
+   }
+
+   *Option: AUTOROTATEA1
+   {
+      *rcNameID: =IDS_PAGEAUTOROTATE_A1
+   }
+
+   *Option: AUTOROTATEA2
+   {
+      *rcNameID: =IDS_PAGEAUTOROTATE_A2
+   }
+
+}
+
+*%******************************************************************************
+*%                              PageColorManagement
+*%******************************************************************************
+*Feature: PageColorManagement
+{
+   *PrintSchemaKeywordMap: "PageColorManagement"
+   *rcNameID: =IDS_COLORMANAGEMENT
+   *DefaultOption: Device
+   *Option: None
+   {
+      *PrintSchemaKeywordMap: "None"
+      *rcNameID: =IDS_COLORMANAGEMENT_NONE
+   }
+
+   *Option: Device
+   {
+      *PrintSchemaKeywordMap: "Device"
+      *rcNameID: =IDS_COLORMANAGEMENT_DRIVER
+   }
+
+}
+
+*%******************************************************************************
+*%                              ColorMode
+*%******************************************************************************
+*Feature: ColorMode
+{
+   *PrintSchemaKeywordMap: "PageOutputColor"
+   *rcNameID: =IDS_PAGEOUTPUTCOLOR
+   *DefaultOption: Color
+   *Option: Color
+   {
+      *PrintSchemaKeywordMap: "Color"
+      *rcNameID: =IDS_PAGEOUTPUTCOLOR_COLOR
+      *Color?: TRUE
+      *DrvBPP: 24
+      *DevBPP: 24
+      *DevNumOfPlanes: 1
+      *PaletteSize: 256
+      *PaletteProgrammable?: TRUE
+   }
+
+   *Option: Grayscale
+   {
+      *PrintSchemaKeywordMap: "Grayscale"
+      *rcNameID: =IDS_PAGEOUTPUTCOLOR_GRAYSCALE
+      *Color?: FALSE
+      *DrvBPP: 24
+      *DevBPP: 24
+   }
+
+   *Option: Monochrome
+   {
+      *PrintSchemaKeywordMap: "Monochrome"
+      *rcNameID: =IDS_PAGEOUTPUTCOLOR_MONOCHROME
+      *Color?: FALSE
+      *DrvBPP: 24
+      *DevBPP: 24
+   }
+
+}
+
+*%******************************************************************************
+*%                              PageRGBColorManagement
+*%******************************************************************************
+*Feature: PageRGBColorManagement
+{
+   *rcNameID: =IDS_RGBCOLORMANAGEMENT
+   *DefaultOption: sRGB
+   *Option: None
+   {
+      *rcNameID: =IDS_RGBCOLORMANAGEMENT_NONE
+   }
+
+   *Option: sRGB
+   {
+      *rcNameID: =IDS_RGBCOLORMANAGEMENT_SRGB
+   }
+
+}
+
+*%******************************************************************************
+*%                              PaperSize
+*%******************************************************************************
+*Feature: PaperSize
+{
+   *PrintSchemaKeywordMap: "PageMediaSize"
+   *rcNameID: =IDS_PAGEMEDIASIZE
+   *switch: Locale
+   {
+      *case: English_United_States
+      {
+         *DefaultOption: LETTER
+      }
+
+      *default: 
+      {
+         *DefaultOption: A4
+      }
+
+   }
+
+   *Option: LETTER
+   {
+      *PrintSchemaKeywordMap: "NorthAmericaLetter"
+      *rcNameID: =IDS_PAGEMEDIASIZE_LETTER
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(10200,13200)
+      *PageDimensions: PAIR(10200,13200)
+   }
+
+   *Option: NorthAmericaTabloid
+   {
+      *PrintSchemaKeywordMap: "NorthAmericaTabloid"
+      *rcNameID: =IDS_PAGEMEDIASIZE_TABLOID
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(13200,20400)
+      *PageDimensions: PAIR(13200,20400)
+   }
+
+   *Option: NorthAmericaCSheet
+   {
+      *PrintSchemaKeywordMap: "NorthAmericaCSheet"
+      *rcNameID: =IDS_PAGEMEDIASIZE_C
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(20400,26400)
+      *PageDimensions: PAIR(20400,26400)
+   }
+
+   *Option: ISOC2
+   {
+      *PrintSchemaKeywordMap: "ISOC2"
+      *rcNameID: =IDS_PAGEMEDIASIZE_C2
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(21638,30614)
+      *PageDimensions: PAIR(21638,30614)
+   }
+
+   *Option: ISOC3
+   {
+      *PrintSchemaKeywordMap: "ISOC3"
+      *rcNameID: =IDS_PAGEMEDIASIZE_C3
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(15307,21638)
+      *PageDimensions: PAIR(15307,21638)
+   }
+
+   *Option: ISOC4
+   {
+      *PrintSchemaKeywordMap: "ISOC4"
+      *rcNameID: =IDS_PAGEMEDIASIZE_C4
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(10819,15307)
+      *PageDimensions: PAIR(10819,15307)
+   }
+
+   *Option: NorthAmericaDSheet
+   {
+      *PrintSchemaKeywordMap: "NorthAmericaDSheet"
+      *rcNameID: =IDS_PAGEMEDIASIZE_D
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(26400,40800)
+      *PageDimensions: PAIR(26400,40800)
+   }
+
+   *Option: NorthAmericaLegal
+   {
+      *PrintSchemaKeywordMap: "NorthAmericaLegal"
+      *rcNameID: =IDS_PAGEMEDIASIZE_LEGAL
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(10200,16800)
+      *PageDimensions: PAIR(10200,16800)
+   }
+
+   *Option: A4
+   {
+      *PrintSchemaKeywordMap: "ISOA4"
+      *rcNameID: =IDS_PAGEMEDIASIZE_ISOA4
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(9921,14031)
+      *PageDimensions: PAIR(9921,14031)
+   }
+
+   *Option: ISOA3
+   {
+      *PrintSchemaKeywordMap: "ISOA3"
+      *rcNameID: =IDS_PAGEMEDIASIZE_ISOA3
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(14031,19843)
+      *PageDimensions: PAIR(14031,19843)
+   }
+
+   *Option: ISOA2
+   {
+      *PrintSchemaKeywordMap: "ISOA2"
+      *rcNameID: =IDS_PAGEMEDIASIZE_ISOA2
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(19843,28063)
+      *PageDimensions: PAIR(19843,28063)
+   }
+
+   *Option: ISOA1
+   {
+      *PrintSchemaKeywordMap: "ISOA1"
+      *rcNameID: =IDS_PAGEMEDIASIZE_ISOA1
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(28063,39732)
+      *PageDimensions: PAIR(28063,39732)
+   }
+
+   *Option: JISB4
+   {
+      *PrintSchemaKeywordMap: "JISB4"
+      *rcNameID: =IDS_PAGEMEDIASIZE_B4JIS
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(12142,17197)
+      *PageDimensions: PAIR(12142,17197)
+   }
+
+   *Option: JISB3
+   {
+      *PrintSchemaKeywordMap: "JISB3"
+      *rcNameID: =IDS_PAGEMEDIASIZE_B3JIS
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(17197,24331)
+      *PageDimensions: PAIR(17197,24331)
+   }
+
+   *Option: JISB2
+   {
+      *PrintSchemaKeywordMap: "JISB2"
+      *rcNameID: =IDS_PAGEMEDIASIZE_B2JIS
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(24331,34394)
+      *PageDimensions: PAIR(24331,34394)
+   }
+
+   *Option: NorthAmericaArchitectureASheet
+   {
+      *PrintSchemaKeywordMap: "NorthAmericaArchitectureASheet"
+      *rcNameID: =IDS_PAGEMEDIASIZE_ARCHA
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(10800,14400)
+      *PageDimensions: PAIR(10800,14400)
+   }
+
+   *Option: NorthAmericaArchitectureBSheet
+   {
+      *PrintSchemaKeywordMap: "NorthAmericaArchitectureBSheet"
+      *rcNameID: =IDS_PAGEMEDIASIZE_ARCHB
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(14400,21600)
+      *PageDimensions: PAIR(14400,21600)
+   }
+
+   *Option: NorthAmericaArchitectureCSheet
+   {
+      *PrintSchemaKeywordMap: "NorthAmericaArchitectureCSheet"
+      *rcNameID: =IDS_PAGEMEDIASIZE_ARCHC
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(21600,28800)
+      *PageDimensions: PAIR(21600,28800)
+   }
+
+   *Option: NorthAmericaArchitectureDSheet
+   {
+      *PrintSchemaKeywordMap: "NorthAmericaArchitectureDSheet"
+      *rcNameID: =IDS_PAGEMEDIASIZE_ARCHD
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(28800,43200)
+      *PageDimensions: PAIR(28800,43200)
+   }
+
+   *Option: ISOB4
+   {
+      *PrintSchemaKeywordMap: "ISOB4"
+      *rcNameID: =IDS_PAGEMEDIASIZE_ISOB4
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(11811,16677)
+      *PageDimensions: PAIR(11811,16677)
+   }
+
+   *Option: ISOB3
+   {
+      *PrintSchemaKeywordMap: "ISOB3"
+      *rcNameID: =IDS_PAGEMEDIASIZE_ISOB3
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(16677,23622)
+      *PageDimensions: PAIR(16677,23622)
+   }
+
+   *Option: ISOB2
+   {
+      *PrintSchemaKeywordMap: "ISOB2"
+      *rcNameID: =IDS_PAGEMEDIASIZE_ISOB2
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(23622,33402)
+      *PageDimensions: PAIR(23622,33402)
+   }
+
+   *Option: NorthAmericaSuperB
+   {
+      *PrintSchemaKeywordMap: "NorthAmericaSuperB"
+      *rcNameID: =IDS_PAGEMEDIASIZE_SBA3
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(15600,22800)
+      *PageDimensions: PAIR(15600,22800)
+   }
+
+   *Option: SuperCA2
+   {
+      *rcNameID: =IDS_PAGEMEDIASIZE_SCA2
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(21600,28800)
+      *PageDimensions: PAIR(21600,28800)
+   }
+
+   *Option: SuperDA1
+   {
+      *rcNameID: =IDS_PAGEMEDIASIZE_SDA1
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(28800,43200)
+      *PageDimensions: PAIR(28800,43200)
+   }
+
+   *Option: 11X14
+   {
+      *rcNameID: =IDS_PAGEMEDIASIZE_1114
+      *PrintableOrigin: PAIR(0,0)
+      *PrintableArea: PAIR(13200,16800)
+      *PageDimensions: PAIR(13200,16800)
+   }
+
+   *Option: CUSTOMSIZE
+   {
+      *rcNameID: =RCID_DMPAPER_SYSTEM_NAME
+      *MinSize: PAIR(3732,6614)
+      *MaxSize: PAIR(28800,4299213)
+      *MaxPrintableWidth: 28800
+      *CenterPrintable?: FALSE
+      *CustCursorOriginX: %d{0}
+      *CustCursorOriginY: %d{0}
+      *CustPrintableOriginX: %d{0}
+      *CustPrintableOriginY: %d{0}
+      *CustPrintableSizeX: %d{ PhysPaperWidth - 0 }
+      *CustPrintableSizeY: %d{ PhysPaperLength - 0 }
+   }
+
+}
+
+*%******************************************************************************
+*%                              PrintQuality
+*%******************************************************************************
+*Feature: PrintQuality
+{
+   *PrintSchemaKeywordMap: "PageOutputQuality"
+   *rcNameID: =IDS_PAGEOUTPUTQUALITY
+   *DefaultOption: Draft
+   *Option: Draft
+   {
+      *PrintSchemaKeywordMap: "Draft"
+      *rcNameID: =IDS_PAGEOUTPUTQUALITY_DRAFT
+   }
+
+   *Option: Normal
+   {
+      *PrintSchemaKeywordMap: "Normal"
+      *rcNameID: =IDS_PAGEOUTPUTQUALITY_NORMAL
+   }
+
+   *Option: High
+   {
+      *PrintSchemaKeywordMap: "High"
+      *rcNameID: =IDS_PAGEOUTPUTQUALITY_HIGH
+   }
+
+}
+
+*%******************************************************************************
+*%                              Resolution
+*%******************************************************************************
+*Feature: Resolution
+{
+   *PrintSchemaKeywordMap: "PageResolution"
+   *rcNameID: =IDS_RESOLUTION
+   *DefaultOption: 300dpi
+   *Option: 300dpi
+   {
+      *rcNameID: =IDS_RESOLUTION_300DPI
+      *DPI: PAIR(300, 300)
+      *TextDPI: PAIR(300, 300)
+      *SpotDiameter: 100
+   }
+
+   *Option: 600dpi
+   {
+      *rcNameID: =IDS_RESOLUTION_600DPI
+      *DPI: PAIR(600, 600)
+      *TextDPI: PAIR(600, 600)
+      *SpotDiameter: 100
+   }
+
+   *Option: 1200dpi
+   {
+      *rcNameID: =IDS_RESOLUTION_1200DPI
+      *DPI: PAIR(1200, 1200)
+      *TextDPI: PAIR(1200, 1200)
+      *SpotDiameter: 100
+   }
+
+}
+
+*Command: CmdCR { *Cmd : "" }
+*Command: CmdLF { *Cmd : "" }
+*Command: CmdFF { *Cmd : "" }

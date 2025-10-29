@@ -1,0 +1,35 @@
+# copyAndPaste
+$meridianFolder = "\\wasp\Instaladores\DTI Service\Programas\Meridian\files\Meridian2021ClientSetup"
+$temp = "C:\temp"
+
+# installJava
+$silentArgs = "/s"
+$javaInstall = "C:\temp\Meridian2021ClientSetup\jre-8u202-windows-i586.exe"
+
+#installSSCER
+$exeArgs = "/quiet /norestart"
+$sscer1 = "C:\temp\Meridian2021ClientSetup\SSCERuntime_x64-ENU 3.5 SP2.msi"
+$sscer2 = "C:\temp\Meridian2021ClientSetup\SSCERuntime_x64-PTB 4.0.exe"
+$sscer3 = "C:\temp\Meridian2021ClientSetup\SSCERuntime_x86-ENU 3.5 SP2.msi"
+$sscer4 = "C:\temp\Meridian2021ClientSetup\SSCERuntime_x86-PTB 4.0.exe"
+
+#installMeridian
+$msiPath = "C:\Temp\Meridian2021ClientSetup\Client64setup_b5380\Meridian Enterprise (x64).msi"
+
+#deleteShortcuts
+$atalho1 = "C:\Users\Public\Desktop\Meridian PowerUser (64-bit).lnk"
+$atalho2 = "C:\Users\Public\Desktop\Meridian PowerUser.lnk"
+
+#replacePowerUser
+$mps = "\\wasp\Instaladores\DTI Service\Programas\Meridian\files\Patch 6104 (MPS-44172)PowerUser\PowerUser.exe"
+$pathProgram = "C:\Program Files\BC-Meridian\Program\PowerUser.exe"
+
+#createShortcut
+$shortcutOrigin = "\\wasp\Instaladores\DTI Service\Programas\Meridian\files\Patch 6104 (MPS-44172)PowerUser\PowerUserU.exe"
+$shortcutDestiny = "C:\Users\Public\Desktop\PowerUserU.exe"
+
+#activeX
+$service = "AxInstSV"
+
+#installBCME
+$setup = "C:\temp\Meridian2021ClientSetup\BCME 2021 AutoVue Setup for Meridian b5380.msi"

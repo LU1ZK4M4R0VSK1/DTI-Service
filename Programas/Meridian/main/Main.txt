@@ -1,0 +1,38 @@
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
+
+#SERVIDOR
+$servidorItambe = "wasp"
+
+#VARIAVEIS
+
+#Chama o arquivo com as variaveis
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\Meridian\vars\variables.txt" | Out-String)
+
+#INSTALACAO
+
+#Copia e cola a pasta para o temp
+#Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\Meridian\bin\copyAndPaste.txt" | Out-String)
+
+#Instalação do arquivo java jre-8u202-windows-i586.exe
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\Meridian\bin\installJava.txt" | Out-String)
+
+#Instalação dos arquivos SSCERuntime
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\Meridian\bin\installSSCER.txt" | Out-String)
+
+#Instalação do Meridian
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\Meridian\bin\installMeridian.txt" | Out-String)
+
+#Excluir atalhos
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\Meridian\bin\deleteShortcuts.txt" | Out-String)
+
+#Copiar "PowerUser" para "C:\Program Files\BC-Meridian\Program"
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\Meridian\bin\replacePowerUser.txt" | Out-String)
+
+#Criar atalho
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\Meridian\bin\createShortcut.txt" | Out-String)
+
+#Setar activeX para inicialização automática
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\Meridian\bin\activeX.txt" | Out-String)
+
+#instalar BCME
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\Meridian\bin\installBCME.txt" | Out-String)

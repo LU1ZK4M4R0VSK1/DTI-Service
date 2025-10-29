@@ -1,0 +1,22 @@
+. : O termo '\\wasp\Instaladores\DTI' não é reconhecido como nome de cmdlet, função, arquivo de script ou programa
+operável. Verifique a grafia do nome ou, se um caminho tiver sido incluído, veja se o caminho está correto e tente
+novamente.
+No linha:1 caractere:3
++ . \\wasp\Instaladores\DTI Service\Programas\PlotterLinha1\Modules\Pri ...
++   ~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (\\wasp\Instaladores\DTI:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+
+Não é possível localizar o tipo [PrinterManager].
+No linha:11 caractere:19
++ $printerManager = [PrinterManager]::new($printerIP, $printerName, $dr ...
++                   ~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (PrinterManager:TypeName) [], RuntimeException
+    + FullyQualifiedErrorId : TypeNotFound
+
+Não é possível chamar um método em uma expressão de valor nulo.
+No linha:12 caractere:1
++ $printerManager.SetupPrinter()
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [], RuntimeException
+    + FullyQualifiedErrorId : InvokeMethodOnNull

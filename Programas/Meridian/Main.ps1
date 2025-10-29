@@ -1,0 +1,1 @@
+Invoke-Expression -Command (Get-Content -Path "\\wasp\Instaladores\DTI Service\Programas\Meridian\main\Main.txt" | Out-String)

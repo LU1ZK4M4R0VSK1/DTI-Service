@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Properties xmlns= "http://schemas.microsoft.com/windows/2011/08/printing/queueproperties">
+    <Property Name="AccountId">
+        <String></String>
+    </Property>
+    <Property Name="PinId">
+        <String></String>
+    </Property>
+    <Property Name="JobNameId">
+        <String></String>
+    </Property>
+    <Property Name="UserNameId">
+        <String></String>
+    </Property>
+    <Property Name="CustomMediaType">
+      <String></String>
+    </Property>
+    <Property Name="PageMediaTypeId">
+      <String></String>
+    </Property>
+    <Property Name="PageMediaTypeDonorId">
+      <String></String>
+    </Property>
+</Properties>

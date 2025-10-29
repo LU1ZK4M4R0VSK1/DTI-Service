@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<bidi:Schema xmlns:bidi="http://schemas.microsoft.com/windows/2010/09/printing/usbbidi">
+  <!--Version 3.0-->
+  <Property name="Printer">
+    <Property name='Status'>
+      <Property name='Summary'>
+        <Value name="StateReason" type="BIDI_STRING" accessType="Get" refreshInterval="5" drvPrinterEvent="true"/>
+      </Property>
+    </Property>
+	<!-- For a reason that needs to be investigate, you can only have 6 fields for each input source-->
+    <Property name="PaperSource">
+        <Property name="Source1">
+          <Value name="Name" accessType="Get" type="BIDI_STRING" queryKey="\Printer.PaperSource.Source1:Name;FindIndexXmlStr;/DevMgmt/MediaHandlingDyn.xml;mhdyn:InputTray;dd:InputBin;Roll1" drvPrinterEvent="true"/>
+		  <Value name="Type" accessType="Get" type="BIDI_STRING" queryKey="\Printer.PaperSource.Source1:Type;FindIndexXmlStr;/DevMgmt/MediaHandlingDyn.xml;mhdyn:InputTray;dd:InputBin;Roll1" drvPrinterEvent="true"/>
+          <Value name="Id" accessType="Get" type="BIDI_STRING" queryKey="\Printer.PaperSource.Source1:Id;FindIndexXmlStr;/DevMgmt/MediaHandlingDyn.xml;mhdyn:InputTray;dd:MediaKey;Roll1" drvPrinterEvent="true"/>
+		  <Value name="InputInstalled" accessType="Get" type="BIDI_STRING" queryKey="\Printer.PaperSource.Source1:InputInstalled;FindIndexXmlStr;/DevMgmt/MediaHandlingDyn.xml;mhdyn:InputTray;dd:TrayState;Roll1" drvPrinterEvent="true"/>
+          <Value name="Width" accessType="Get" type="BIDI_STRING" queryKey="\Printer.PaperSource.Source1:Width;FindIndexXmlConvertStr;/DevMgmt/MediaHandlingDyn.xml;mhdyn:InputTray;dd:Width;Roll1;" drvPrinterEvent="true"/>
+		  <Value name="Length" accessType="Get" type="BIDI_STRING" queryKey="\Printer.PaperSource.Source1:Length;FindIndexXmlConvertStr;/DevMgmt/MediaHandlingDyn.xml;mhdyn:InputTray;dd:Length;Roll1" drvPrinterEvent="true"/>
+        </Property>
+        <Property name="Source2">
+          <Value name="Name" accessType="Get" type="BIDI_STRING" queryKey="\Printer.PaperSource.Source2:Name;FindIndexXmlStr;/DevMgmt/MediaHandlingDyn.xml;mhdyn:InputTray;dd:InputBin;Tray1" drvPrinterEvent="true"/>
+          <Value name="Type" accessType="Get" type="BIDI_STRING" queryKey="\Printer.PaperSource.Source2:Type;FindIndexXmlStr;/DevMgmt/MediaHandlingDyn.xml;mhdyn:InputTray;dd:InputBin;Tray1" drvPrinterEvent="true"/>
+		  <Value name="Id" accessType="Get" type="BIDI_STRING" queryKey="\Printer.PaperSource.Source2:Id;FindIndexXmlStr;/DevMgmt/MediaHandlingDyn.xml;mhdyn:InputTray;dd:MediaKey;Tray1" drvPrinterEvent="true"/>
+		  <Value name="InputInstalled" accessType="Get" type="BIDI_STRING" queryKey="\Printer.PaperSource.Source2:InputInstalled;FindIndexXmlStr;/DevMgmt/MediaHandlingDyn.xml;mhdyn:InputTray;dd:TrayState;Tray1" drvPrinterEvent="true"/>
+          <Value name="Width" accessType="Get" type="BIDI_STRING" queryKey="\Printer.PaperSource.Source2:Width;FindIndexXmlConvertStr;/DevMgmt/MediaHandlingDyn.xml;mhdyn:InputTray;dd:Width;Tray1;" drvPrinterEvent="true"/>
+          <Value name="Length" accessType="Get" type="BIDI_STRING" queryKey="\Printer.PaperSource.Source2:Length;FindIndexXmlConvertStr;/DevMgmt/MediaHandlingDyn.xml;mhdyn:InputTray;dd:Length;Tray1" drvPrinterEvent="true"/>
+        </Property>
+		<Property name="Source3">
+          <Value name="Name" accessType="Get" type="BIDI_STRING" queryKey="\Printer.PaperSource.Source3:Name;FindIndexXmlStr;/DevMgmt/MediaHandlingDyn.xml;mhdyn:InputTray;dd:InputBin;TopFeedTray" drvPrinterEvent="true"/>
+		  <Value name="Type" accessType="Get" type="BIDI_STRING" queryKey="\Printer.PaperSource.Source3:Type;FindIndexXmlStr;/DevMgmt/MediaHandlingDyn.xml;mhdyn:InputTray;dd:InputBin;TopFeedTray" drvPrinterEvent="true"/>
+		  <Value name="Id" accessType="Get" type="BIDI_STRING" queryKey="\Printer.PaperSource.Source3:Id;FindIndexXmlStr;/DevMgmt/MediaHandlingDyn.xml;mhdyn:InputTray;dd:MediaKey;TopFeedTray" drvPrinterEvent="true"/>
+          <Value name="InputInstalled" accessType="Get" type="BIDI_STRING" queryKey="\Printer.PaperSource.Source3:InputInstalled;FindIndexXmlStr;/DevMgmt/MediaHandlingDyn.xml;mhdyn:InputTray;dd:TrayState;TopFeedTray" drvPrinterEvent="true"/>
+          <Value name="Width" accessType="Get" type="BIDI_STRING" queryKey="\Printer.PaperSource.Source3:Width;FindIndexXmlConvertStr;/DevMgmt/MediaHandlingDyn.xml;mhdyn:InputTray;dd:Width;TopFeedTray;" drvPrinterEvent="true"/>
+          <Value name="Length" accessType="Get" type="BIDI_STRING" queryKey="\Printer.PaperSource.Source3:Length;FindIndexXmlConvertStr;/DevMgmt/MediaHandlingDyn.xml;mhdyn:InputTray;dd:Length;TopFeedTray" drvPrinterEvent="true"/>
+        </Property>
+    </Property>
+  </Property>
+</bidi:Schema>

@@ -1,0 +1,7 @@
+Adicionando a impressora PLOTTER LINHA 1 com IP 10.15.50.1
+Add-Printer : O driver especificado não existe. Use add-printerdriver para adicionar um novo driver ou especifique um driver existente.
+No \\wasp\Instaladores\DTI Service\Programas\PlotterLinha1\Modules\PrinterManager.ps1:44 caractere:9
++         Add-Printer -Name $this.PrinterName -DriverName $this.DriverN ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (MSFT_Printer:ROOT/StandardCimv2/MSFT_Printer) [Add-Printer], CimException
+    + FullyQualifiedErrorId : HRESULT 0x80070705,Add-Printer

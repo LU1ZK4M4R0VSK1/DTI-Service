@@ -1,0 +1,32 @@
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
+
+# SERVIDOR
+$servidorItambe = "wasp"
+
+# Função para exibir o status de progressão
+function Show-DownloadProgress {
+    param (
+        [int]$Progress,
+        [string]$Activity
+    )
+    Write-Host "[$Progress%] $Activity"
+}
+
+# DESINSTALACAO
+Show-DownloadProgress -Progress 0 -Activity "Iniciando desinstalação..."
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\Adobe\unistall\unistall.txt" | Out-String)
+Show-DownloadProgress -Progress 33 -Activity "Desinstalação concluída."
+
+# INSTALACAO
+# Copia e cola o instalador no TEMP
+Show-DownloadProgress -Progress 33 -Activity "Iniciando cópia do instalador..."
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\Adobe\bin\copyAndPaste.txt" | Out-String)
+Show-DownloadProgress -Progress 66 -Activity "Cópia do instalador concluída."
+
+# Faz a instalação silenciosa do Adobe
+Show-DownloadProgress -Progress 66 -Activity "Iniciando instalação do Adobe..."
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\Adobe\bin\install.txt" | Out-String)
+Show-DownloadProgress -Progress 100 -Activity "Instalação concluída."
+
+# Finalização
+Write-Host "[100%] Processo finalizado com sucesso!"

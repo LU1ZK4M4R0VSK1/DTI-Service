@@ -1,0 +1,14 @@
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Force
+
+#SERVIDOR
+$servidorItambe = "wasp"
+
+#VARIAVEIS
+
+$copyAndPaste = "\\$servidorItambe\Instaladores\DTI Service\Programas\SGEE\bin\copyAndPaste.bat"
+
+#INSTALA
+
+Start-Process -FilePath $copyAndPaste -Wait
+
+Invoke-Expression -Command (Get-Content -Path "\\$servidorItambe\Instaladores\DTI Service\Programas\SGEE\bin\execute.txt" | Out-String)

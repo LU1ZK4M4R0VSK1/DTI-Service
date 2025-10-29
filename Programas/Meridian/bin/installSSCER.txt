@@ -1,0 +1,11 @@
+# Instalar SSCERuntime_x64-ENU 3.5 SP2.msi
+Start-Process -FilePath "msiexec.exe" -ArgumentList "/i", "`"$sscer1`"", "/quiet", "/norestart", "/log", "C:\temp\install_log.txt" -NoNewWindow -Wait
+
+# Instalar SSCERuntime_x86-ENU 3.5 SP2.msi
+Start-Process -FilePath "msiexec.exe" -ArgumentList "/i", "`"$sscer3`"", "/quiet", "/norestart", "/log", "C:\temp\install_log.txt" -NoNewWindow -Wait
+
+# Instalar SSCERuntime_x64-PTB 4.0.exe
+Start-Process -FilePath $sscer2 -ArgumentList $exeArgs -Wait
+
+# Instalar SSCERuntime_x86-PTB 4.0.exe
+Start-Process -FilePath $sscer4 -ArgumentList $exeArgs -Wait

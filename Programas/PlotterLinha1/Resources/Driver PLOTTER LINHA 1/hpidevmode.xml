@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Properties xmlns="http://schemas.microsoft.com/windows/2011/08/printing/devmodemap">
+    <Property Name="Scaling">
+       <String Length="260"></String>
+    </Property>
+    <Property Name="AccountId">
+       <String Length="31"></String>
+    </Property>
+    <Property Name="PinId">
+       <String Length="5"></String>
+    </Property>
+   <Property Name="RenderRes">
+     <String Length="10"></String>
+   </Property>
+   <Property Name="PageMediaSizeMediaSizeWidth">
+     <Int32></Int32>
+   </Property>
+   <Property Name="PageMediaSizeMediaSizeHeight">
+     <Int32></Int32>
+   </Property>
+   <Property Name="JobNameId">
+     <String Length="31"></String>
+   </Property>
+   <Property Name="UserNameId">
+     <String Length="31"></String>
+   </Property>
+   <Property Name="ColorAdjustmentLightness">
+     <Int32></Int32>
+   </Property>
+   <Property Name="ColorAdjustmentRed">
+     <Int32></Int32>
+   </Property>
+   <Property Name="ColorAdjustmentGreen">
+     <Int32 ></Int32>
+   </Property>
+   <Property Name="ColorAdjustmentBlue">
+     <Int32></Int32>
+   </Property>
+   <Property Name="CustomMediaType">
+     <String Length="129"></String>
+   </Property>
+   <Property Name="PageMediaTypeId">
+    <String Length="65"></String>
+   </Property>
+   <Property Name="PageMediaTypeDonorId">
+    <String Length="65"></String>
+   </Property>
+   <Property Name="PageMediaSizeName">
+     <String Length="129"></String>
+   </Property>
+   <Property Name="PageMediaSizeNs">
+     <String Length="129"></String>
+   </Property>
+   <Property Name="PageMediaSizeWidth">
+     <Int32></Int32>
+   </Property>
+   <Property Name="PageMediaSizeHeight">
+     <Int32></Int32>
+   </Property>
+</Properties>
