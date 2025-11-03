@@ -2,6 +2,5 @@
     "Otimização Completa": "\\\\wasp\\Instaladores\\DTI Service\\Optimizations\\FullOptimization.ps1",
     "GP Update": "\\\\wasp\\Instaladores\\DTI Service\\Optimizations\\GpUpdate.ps1",
     "Scan Health": "\\\\wasp\\Instaladores\\DTI Service\\Optimizations\\ScanHealth.ps1",
-    "Scan Now": "\\\\wasp\\Instaladores\\DTI Service\\Optimizations\\ScanNow.ps1",
-    "teste": "\\\\wasp\\Instaladores\\DTI Service\\Programas\\Teste\\teste.ps1"
+    "Scan Now": "\\\\wasp\\Instaladores\\DTI Service\\Optimizations\\ScanNow.ps1"
 }
