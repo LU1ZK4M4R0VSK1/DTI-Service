@@ -7,6 +7,7 @@ class OptimizationsTab:
     def __init__(self, tabview):
         self.frame = tabview.tab("Otimizações")
         self.opcoes = self.obter_scripts("otimizacoes")  # Obter os scripts
+        print(f"[DEBUG Optimizations] Dados recebidos: {self.opcoes}")  # Log de depuração
         self.button_frame = ctk.CTkFrame(self.frame)
         self.button_frame.pack(fill="both", expand=True, padx=0, pady=10)
         self.create_widgets()
@@ -28,8 +29,11 @@ class OptimizationsTab:
         """
         Função para criar os botões dinamicamente a partir das opções de scripts.
         """
+        print(f"[DEBUG GUI Optimizations] Tentando criar widgets com as opções: {self.opcoes}")
         if not self.opcoes:
-            print("Nenhum script encontrado, não foi possível criar os botões.")
+            print("[WARNING GUI Optimizations] Nenhuma opção encontrada. Exibindo aviso.")
+            label_aviso = ctk.CTkLabel(self.button_frame, text="Nenhuma otimização carregada.\nVerifique os logs.", text_color="gray")
+            label_aviso.pack(pady=20, padx=10)
             return
 
         for otimizacao, caminho in self.opcoes.items():

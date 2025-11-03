@@ -23,13 +23,7 @@ from optimizations import OptimizationsTab
 from ticket import NovoChamadoApp
 from groups_window import show_groups_window
 from add_script import AddScriptWindow
-from database import inicializar_banco
 
-# Inicializar banco de dados ao iniciar
-try:
-    inicializar_banco()
-except Exception as e:
-    print(f"Erro ao inicializar o banco: {e}")
 
 # Configuração principal
 ctk.set_appearance_mode("Dark")

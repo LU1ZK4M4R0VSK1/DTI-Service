@@ -7,6 +7,8 @@ SET "TARGET_EXE_DIR=%SCRIPT_DIR%exe"
 SET "IMAGE_PATH=%SCRIPT_DIR%img\logo_itambe.png"
 SET "MAIN_PY_TEMP_PATH=%TEMP_BUILD_DIR%\main.py"
 
+SET "DATA_PATH=%SCRIPT_DIR%data"
+
 REM 1 - Limpa e cria o diretório de build temporário
 IF EXIST "%TEMP_BUILD_DIR%" (
     rd /s /q "%TEMP_BUILD_DIR%"
@@ -24,7 +26,7 @@ IF EXIST "%TARGET_EXE_DIR%\main.exe" (
 REM 4 - Executa o PyInstaller
 REM O --distpath já coloca o executável no lugar certo.
 REM O --workpath e --specpath organizam os arquivos de build.
-pyinstaller --onefile --windowed --add-data "%IMAGE_PATH%;." --distpath "%TARGET_EXE_DIR%" --workpath "%TEMP_BUILD_DIR%\build" --specpath "%TEMP_BUILD_DIR%" "%MAIN_PY_TEMP_PATH%"
+pyinstaller --onefile --windowed --add-data "%IMAGE_PATH%;." --add-data "%DATA_PATH%;data" --distpath "%TARGET_EXE_DIR%" --workpath "%TEMP_BUILD_DIR%\build" --specpath "%TEMP_BUILD_DIR%" "%MAIN_PY_TEMP_PATH%"
 
 REM 5 - Limpa o diretório temporário
 rd /s /q "%TEMP_BUILD_DIR%"

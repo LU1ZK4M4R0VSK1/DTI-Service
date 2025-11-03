@@ -7,6 +7,7 @@ class ProgramsTab:
     def __init__(self, tabview):
         self.frame = tabview.tab("Programas")
         self.opcoes = self.obter_scripts("programas")  # Obter os scripts
+        print(f"[DEBUG Programs] Dados recebidos: {self.opcoes}")  # Log de depuração
         self.button_frame = ctk.CTkFrame(self.frame)
         self.button_frame.pack(fill="both", expand=True, padx=10, pady=10)
         self.create_widgets()
@@ -28,8 +29,11 @@ class ProgramsTab:
         """
         Função para criar os botões dinamicamente a partir das opções de scripts.
         """
+        print(f"[DEBUG GUI Programs] Tentando criar widgets com as opções: {self.opcoes}")
         if not self.opcoes:
-            print("Nenhum script encontrado, não foi possível criar os botões.")
+            print("[WARNING GUI Programs] Nenhuma opção encontrada. Exibindo aviso.")
+            label_aviso = ctk.CTkLabel(self.button_frame, text="Nenhum programa carregado.\nVerifique os logs.", text_color="gray")
+            label_aviso.pack(pady=20, padx=10)
             return
 
         for programa, caminho in self.opcoes.items():
