@@ -76,9 +76,80 @@ function Invoke-AsCurrentUser {
     }
 }
 
+# Função para verificar e desinstalar versões anteriores do Web Agent
+function Uninstall-ExistingWebAgent {
+    Write-Host "Verificando versões instaladas do Web Agent..." -ForegroundColor Yellow
+    
+    # Procurar em ambos os registros (32 e 64 bits)
+    $uninstallPaths = @(
+        "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*",
+        "HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*",
+        "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\*"
+    )
+    
+    $foundVersions = @()
+    
+    foreach ($path in $uninstallPaths) {
+        try {
+            $apps = Get-ItemProperty $path -ErrorAction SilentlyContinue | Where-Object {
+                $_.DisplayName -like "*Web Agent*" -or $_.DisplayName -like "*web-agent*"
+            }
+            
+            if ($apps) {
+                $foundVersions += $apps
+            }
+        } catch {
+            # Ignorar erros de acesso ao registro
+        }
+    }
+    
+    if ($foundVersions.Count -eq 0) {
+        Write-Host "Nenhuma versão anterior do Web Agent encontrada." -ForegroundColor Green
+        return $true
+    }
+    
+    Write-Host "Encontradas $($foundVersions.Count) versão(ões) do Web Agent instalada(s)." -ForegroundColor Yellow
+    
+    foreach ($app in $foundVersions) {
+        $displayName = $app.DisplayName
+        $uninstallString = $app.UninstallString
+        
+        Write-Host "Desinstalando: $displayName" -ForegroundColor Yellow
+        
+        if ($uninstallString) {
+            try {
+                # Verificar se é um desinstalador NSIS
+                if ($uninstallString -like "*uninst.exe*" -or $uninstallString -like "*Uninstall.exe*") {
+                    # Extrair o caminho do executável
+                    $uninstallExe = $uninstallString -replace '"', ''
+                    
+                    if (Test-Path $uninstallExe) {
+                        Write-Host "Executando desinstalação silenciosa..." -ForegroundColor Yellow
+                        Start-Process -FilePath $uninstallExe -ArgumentList "/S" -Wait -NoNewWindow
+                        Write-Host "Desinstalação concluída: $displayName" -ForegroundColor Green
+                    } else {
+                        Write-Host "Desinstalador não encontrado: $uninstallExe" -ForegroundColor Red
+                    }
+                } else {
+                    Write-Host "Formato de desinstalação não reconhecido para: $displayName" -ForegroundColor Yellow
+                }
+            } catch {
+                Write-Host "Erro ao desinstalar $displayName : $($_.Exception.Message)" -ForegroundColor Red
+            }
+        } else {
+            Write-Host "String de desinstalação não encontrada para: $displayName" -ForegroundColor Yellow
+        }
+    }
+    
+    # Aguardar para garantir que a desinstalação foi concluída
+    Start-Sleep -Seconds 3
+    
+    return $true
+}
+
 # Função para instalar o Web Agent como usuário atual
 function Install-WebAgent {
-    $installerPath = "\\wasp\instaladores\Web Agent\web-agent-1.0.22-windows-x64-release.setup.exe"
+    $installerPath = "\\yes\Instaladores\Web Agent\web-agent-1.0.22-windows-x64-release.setup.exe"
     
     Write-Host "Verificando acesso ao instalador..." -ForegroundColor Yellow
     if (Test-Path $installerPath) {
@@ -97,6 +168,9 @@ function Install-WebAgent {
         $success = Invoke-AsCurrentUser -FilePath $localInstallerPath -Arguments "/S" -WorkingDirectory (Split-Path $localInstallerPath -Parent)
         
         if ($success) {
+            Write-Host "Aguardando conclusão da instalação..." -ForegroundColor Yellow
+            Start-Sleep -Seconds 10
+            
             Write-Host "Web Agent instalado com sucesso como usuário atual!" -ForegroundColor Green
             
             # Limpar instalador local se foi copiado
@@ -210,21 +284,27 @@ function Open-ProtheusWeb {
 function Main {
     Write-Host "=== INSTALAÇÃO PROTHEUS WEB ===" -ForegroundColor Cyan
     
-    # Etapa 1: Instalar o Web Agent como usuário atual
-    Write-Host "\n1. Instalando Web Agent como usuário atual..." -ForegroundColor White
+    # Etapa 1: Desinstalar versões anteriores do Web Agent
+    Write-Host "\n1. Verificando e removendo versões anteriores do Web Agent..." -ForegroundColor White
+    $uninstallSuccess = Uninstall-ExistingWebAgent
+    
+    if (-not $uninstallSuccess) {
+        Write-Host "Erro ao processar versões anteriores do Web Agent." -ForegroundColor Red
+        return
+    }
+    
+    # Etapa 2: Instalar o Web Agent como usuário atual
+    Write-Host "\n2. Instalando Web Agent versão 1.0.22..." -ForegroundColor White
     $installationSuccess = Install-WebAgent
     
     if ($installationSuccess) {
-        # Etapa 2: Abrir o navegador com a URL do Protheus
-        Write-Host "\n2. Acessando o sistema Protheus..." -ForegroundColor White
-        Open-ProtheusWeb
-        
-        # Dar tempo para o navegador abrir
-        Start-Sleep -Seconds 3
-        
         # Etapa 3: Criar atalho com ícone personalizado
         Write-Host "\n3. Criando atalho na área de trabalho pública..." -ForegroundColor White
         $shortcutSuccess = Create-Shortcut
+        
+        # Etapa 4: Abrir o navegador com a URL do Protheus (somente após instalação completa)
+        Write-Host "\n4. Acessando o sistema Protheus..." -ForegroundColor White
+        Open-ProtheusWeb
         
         if ($shortcutSuccess) {
             Write-Host "\nProcesso concluído com sucesso!" -ForegroundColor Green
